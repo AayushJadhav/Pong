@@ -1,0 +1,46 @@
+@font-face {
+    font-family: bit5x3;
+    src: url(./bit5x3.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+
+#first-score {
+    position: absolute;
+    top: 2%;
+    left: 25%;
+    color: white;
+    font-size: 120px;
+    font-family: bit5x3;
+}
+
+#second-score {
+    position: absolute;
+    top: 2%;
+    left: 75%;
+    color: white;
+    font-size: 120px;
+    font-family: bit5x3;
+}
+
+#hl {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    top: 0px;
+    left: 50%;
+    border-left: 1px dashed white;
+}
