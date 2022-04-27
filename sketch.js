@@ -20,10 +20,7 @@ const canvas = new Canvas();
 export const c = canvas.ctx;
 const h1First = document.getElementById("first-score");
 const h1Second = document.getElementById("second-score");
-const finalH1 = document.getElementById("final-h1");
-const btn = document.getElementById("reset");
-finalH1.style.display = "none";
-btn.style.display = "none";
+
 
 var firstPaddle, secondPaddle;
 var ball;
