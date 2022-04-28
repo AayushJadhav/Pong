@@ -44,7 +44,10 @@ function setup() {
 function draw() {
     requestAnimationFrame(draw);
     canvas.clear();
-    
+    secondPaddle.velocity = {
+        veloX: 0,
+        veloY: ball.velocity.veloY
+    }
     
     boundaryCollision(firstPaddle, secondPaddle, ball);
     
@@ -161,12 +164,6 @@ addEventListener('keydown', e => {
         case 83:
             firstPaddle.velocity.veloY = 8;
             break;
-        case 38:
-            secondPaddle.velocity.veloY = -8;
-            break;
-        case 40:
-            secondPaddle.velocity.veloY = 8;
-            break;
     }
 });
 
@@ -177,12 +174,6 @@ addEventListener('keyup', e => {
             break;
         case 83:
             firstPaddle.velocity.veloY = 0;
-            break;
-        case 38:
-            secondPaddle.velocity.veloY = 0;
-            break;
-        case 40:
-            secondPaddle.velocity.veloY = 0;
             break;
     }
 });
