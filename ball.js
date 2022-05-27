@@ -9,8 +9,8 @@ export default class Ball {
         this.radius = 10;
 
         this.velocity = {
-            veloX: Math.round(Math.random()*6),
-            veloY: Math.round(Math.random()*6)
+            veloX: 4,
+            veloY: 4
         }
         if (this.velocity.veloX == 0) {
             this.velocity.veloX = 1;
