@@ -21,6 +21,11 @@ export const c = canvas.ctx;
 const h1First = document.getElementById("first-score");
 const h1Second = document.getElementById("second-score");
 
+const keys = {
+    "upPressed": false,
+    "downPressed": false
+}
+
 
 var firstPaddle, secondPaddle;
 var ball;
@@ -47,6 +52,14 @@ function draw() {
     secondPaddle.velocity = {
         veloX: 0,
         veloY: ball.velocity.veloY
+    }
+    
+    if (keys.upPressed) {
+        firstPaddle.velocity.veloY = -8
+    } else if (keys.downPressed) {
+        firstPaddle.velocity.veloY = 8;
+    } else {
+        firstPaddle.velocity.veloY = 0;
     }
     
     boundaryCollision(firstPaddle, secondPaddle, ball);
@@ -159,10 +172,12 @@ function scoreHandler() {
 addEventListener('keydown', e => {
     switch (e.keyCode) {
         case 87:
-            firstPaddle.velocity.veloY = -8;
+            keys.upPressed = true;
+            keys.downPressed = false;
             break;
         case 83:
-            firstPaddle.velocity.veloY = 8;
+            keys.upPressed = false;
+            keys.downPressed = true;
             break;
     }
 });
@@ -170,10 +185,12 @@ addEventListener('keydown', e => {
 addEventListener('keyup', e => {
     switch (e.keyCode) {
         case 87:
-            firstPaddle.velocity.veloY = 0;
+            keys.upPressed = false
+            keys.downPressed = false;
             break;
         case 83:
-            firstPaddle.velocity.veloY = 0;
+            keys.upPressed = false;
+            keys.downPressed = false;
             break;
     }
 });
